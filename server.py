@@ -54,7 +54,6 @@ from flask import Flask, request, redirect, url_for, render_template, Response
 from flask import send_from_directory
 from werkzeug.utils import secure_filename
 import time
-# from classifier import Prediction, predict
 
 UPLOAD_FOLDER = './static/'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
@@ -94,3 +93,11 @@ def upload_file():
 @app.route('/<subject>/<filename>/<breed>')
 def uploaded_file(subject, filename, breed):
     return render_template('results.html', subject=subject, filename=filename, breed=breed)
+
+if __name__ == "__main__":
+	#decide what port to run the app in
+	port = int(os.environ.get('PORT', 5000))
+	#run the app locally on the givn port
+	app.run(host='0.0.0.0', port=port)
+	#optional if we want to run in debugging mode
+	#app.run(debug=True)
