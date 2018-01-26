@@ -83,7 +83,8 @@ def upload_file():
             filename = secure_filename(file.filename)
             path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(path)
-            prediction = predict(path)
+            # prediction = predict(path)
+            prediction = Prediction("human", path, "Sharpei")
             return redirect(url_for('uploaded_file',
                                     subject=prediction.subject,
                                     filename=filename,
