@@ -1,7 +1,7 @@
 import numpy as np
 from glob import glob
 from keras.applications.resnet50 import preprocess_input
-from utils import load_model, path_to_tensor
+from ml_utils import load_model, path_to_tensor
 
 # Took this strange approach with hardcoding path length from notebook
 # Hope there are more elegant ways to do it in python
