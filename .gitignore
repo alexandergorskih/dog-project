@@ -6,5 +6,4 @@ saved_models/weights.best.vgg16.hdf5
 .ipynb_checkpoints/
 bottleneck_features/DogVGG16Data.npz
 __pycache__/
-web_app/static/
 bottleneck_features/
